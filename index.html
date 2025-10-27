@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CxTrauma - Solicita tu orden gratuita de resonancia magnética en la Quinta Región de Chile">
+    <title>CxTrauma - Orden Gratuita de Resonancia Magnética</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <h1>CxTrauma</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#map" class="nav-link">Centros Médicos</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Orden Gratuita de Resonancia Magnética</h2>
+                    <p class="hero-subtitle">
+                        Solicita tu orden médica sin costo y elige el centro que prefieras.
+                        Atención profesional y rápida, sin costos ocultos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map and Form Section -->
+    <main class="main">
+        <div class="container-fluid">
+            <div class="map-form-wrapper">
+                <!-- Map Container -->
+                <div class="map-column">
+                    <div class="map-header">
+                        <h3 class="map-title">Centros Médicos Disponibles</h3>
+                        <p class="map-subtitle">Selecciona el centro más cercano a tu ubicación</p>
+                    </div>
+                    <div id="map-container" class="map-container">
+                        <img src="mapa transparente.png" alt="Mapa Quinta Región" class="map-image">
+
+                        <!-- Marcador Viña del Mar -->
+                        <div class="map-marker" data-center="clinica-vina" style="left: 35%; top: 65%;" title="Clínica Viña del Mar">
+                            <svg width="48" height="60" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 24 60 24 60C24 60 48 37.2548 48 24C48 10.7452 37.2548 0 24 0Z" fill="#E63946"/>
+                                <circle cx="24" cy="24" r="12" fill="white"/>
+                                <path d="M24 15V33M15 24H33" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                            <span class="marker-label">Viña del Mar</span>
+                        </div>
+
+                        <!-- Marcador Quillota -->
+                        <div class="map-marker" data-center="hospital-quillota" style="left: 45%; top: 25%;" title="Hospital Quillota">
+                            <svg width="48" height="60" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 24 60 24 60C24 60 48 37.2548 48 24C48 10.7452 37.2548 0 24 0Z" fill="#E63946"/>
+                                <circle cx="24" cy="24" r="12" fill="white"/>
+                                <path d="M24 15V33M15 24H33" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                            <span class="marker-label">Quillota</span>
+                        </div>
+                    </div>
+                    <button id="open-form-btn" class="btn-solicitar">Solicitar Orden Gratuita</button>
+                </div>
+
+                <!-- Info Panel -->
+                <div class="info-panel">
+                    <div class="info-content">
+                        <div class="info-section">
+                            <h3 class="info-title">Centros Médicos Disponibles</h3>
+                            <div class="centers-list">
+                                <div class="center-card" data-center="clinica-vina">
+                                    <div class="center-header">
+                                        <h4>Clínica Viña del Mar</h4>
+                                        <span class="center-status">Disponible</span>
+                                    </div>
+                                    <p class="center-address">Av. Libertad 1348, Viña del Mar</p>
+                                    <div class="center-features">
+                                        <span class="feature-tag">Resonancia 3T</span>
+                                        <span class="feature-tag">Sedación disponible</span>
+                                    </div>
+                                </div>
+                                <div class="center-card" data-center="hospital-quillota">
+                                    <div class="center-header">
+                                        <h4>Hospital Quillota</h4>
+                                        <span class="center-status">Disponible</span>
+                                    </div>
+                                    <p class="center-address">Freire 738, Quillota</p>
+                                    <div class="center-features">
+                                        <span class="feature-tag">Resonancia 1.5T</span>
+                                        <span class="feature-tag">Horario extendido</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-section">
+                            <h3 class="info-title">¿Cómo funciona?</h3>
+                            <div class="steps-list">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Completa el formulario</h4>
+                                        <p>Proporciona tus datos y selecciona el centro médico de tu preferencia</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Revisión médica</h4>
+                                        <p>Un especialista revisa tu solicitud y genera la orden médica</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Recibe tu orden</h4>
+                                        <p>La orden firmada llega a tu correo en formato digital</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Agenda tu cita</h4>
+                                        <p>Contacta directamente al centro para agendar tu resonancia</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Overlay -->
+                <div id="modal-overlay" class="modal-overlay">
+                    <!-- Modal Container -->
+                    <div id="form-modal" class="form-modal">
+                        <div class="form-header">
+                            <h4 class="form-title">Solicitar Orden Médica Gratuita</h4>
+                            <button class="form-close" aria-label="Cerrar formulario">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"/>
+                                    <line x1="6" y1="6" x2="18" y2="18"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="form-body">
+                        <div id="success-message" class="success-message" style="display: none;">
+                            <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <p>Tu solicitud ha sido enviada. Pronto recibirás tu orden médica digital firmada por un especialista.</p>
+                        </div>
+
+                        <form id="order-form" class="order-form">
+                            <div class="form-group">
+                                <label for="full-name" class="form-label">Nombre Completo *</label>
+                                <input
+                                    type="text"
+                                    id="full-name"
+                                    name="fullName"
+                                    class="form-input"
+                                    required
+                                    placeholder="Juan Pérez González"
+                                >
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rut" class="form-label">RUT *</label>
+                                <input
+                                    type="text"
+                                    id="rut"
+                                    name="rut"
+                                    class="form-input"
+                                    required
+                                    placeholder="12.345.678-9"
+                                    maxlength="12"
+                                >
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Teléfono *</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-input"
+                                    required
+                                    placeholder="+56 9 1234 5678"
+                                >
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Correo Electrónico *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    required
+                                    placeholder="correo@ejemplo.com"
+                                >
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="center" class="form-label">Centro Médico *</label>
+                                <select id="center" name="center" class="form-input" required>
+                                    <option value="">Seleccione un centro</option>
+                                    <option value="clinica-vina">Clínica Viña del Mar</option>
+                                    <option value="hospital-quillota">Hospital Quillota</option>
+                                </select>
+                                <span class="form-error"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-text">Enviar Solicitud</span>
+                                <span class="btn-spinner" style="display: none;">
+                                    <svg class="spinner" viewBox="0 0 24 24">
+                                        <circle class="spinner-circle" cx="12" cy="12" r="10" fill="none" stroke-width="3"/>
+                                    </svg>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">Lo que dicen nuestros pacientes</h2>
+                <p class="testimonials-subtitle">Miles de personas han confiado en nuestro servicio gratuito</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Excelente servicio. Recibí mi orden médica en menos de 12 horas y pude agendar mi resonancia sin problemas. Todo muy profesional y gratuito como prometían."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>María González</h5>
+                                <span>Viña del Mar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Me ahorraron mucho tiempo y dinero. El doctor me atendió por telemedicina y la orden llegó firmada al día siguiente. Muy recomendado."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Carlos Mendoza</h5>
+                                <span>Quillota</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="star" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Increíble servicio. Tenía dudas sobre si era realmente gratis, pero efectivamente no me cobraron nada. La atención fue muy profesional y rápida."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Ana Rodríguez</h5>
+                                <span>Valparaíso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5 class="footer-title">CxTrauma</h5>
+                    <p class="footer-text">
+                        Facilitando el acceso a órdenes médicas de resonancia magnética en la Quinta Región de Chile.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h5 class="footer-title">Contacto</h5>
+                    <p class="footer-text">
+                        Email: contacto@cxtrauma.cl<br>
+                        Teléfono: +56 9 1234 5678<br>
+                        Quinta Región, Chile
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h5 class="footer-title">Horario de Atención</h5>
+                    <p class="footer-text">
+                        Lunes a Viernes: 8:00 - 18:00<br>
+                        Sábados: 9:00 - 13:00<br>
+                        Domingos: Cerrado
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CxTrauma. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

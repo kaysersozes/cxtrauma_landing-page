@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/ptudela/proyecto/Fotografia/foto/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

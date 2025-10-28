@@ -162,11 +162,11 @@ body {
    ======================================== */
 
 .hero {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(30, 64, 175, 0.85) 100%), url('paciente.png');
-    background-size: contain;
-    background-position: right center;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.75) 0%, rgba(30, 64, 175, 0.75) 100%), url('paciente.png');
+    background-size: cover;
+    background-position: center 20%;
     background-repeat: no-repeat;
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-2xl) 0;
     position: relative;
     overflow: hidden;
 }
@@ -175,7 +175,7 @@ body {
     display: flex;
     align-items: center;
     gap: var(--spacing-2xl);
-    min-height: 300px;
+    min-height: 400px;
     position: relative;
     z-index: 2;
 }
@@ -659,11 +659,22 @@ body {
     transform: translate(-50%, -100%);
     transition: all var(--transition-fast);
     z-index: 10;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, -100%) translateY(0);
+    }
+    50% {
+        transform: translate(-50%, -100%) translateY(-8px);
+    }
 }
 
 .map-marker:hover {
-    transform: translate(-50%, -100%) scale(1.1);
+    transform: translate(-50%, -100%) scale(1.15);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    animation: none;
 }
 
 .map-marker svg {
@@ -1268,3 +1279,395 @@ body {
 .hidden {
     display: none !important;
 }
+
+/* ========================================
+   Exams Section Styles
+   ======================================== */
+
+.exams-section {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+}
+
+.exams-grid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.exams-list {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.exam-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-100);
+    transition: background-color var(--transition-fast);
+    cursor: pointer;
+}
+
+.exam-item:last-child {
+    border-bottom: none;
+}
+
+.exam-item:hover {
+    background-color: var(--gray-50);
+}
+
+.exam-checkbox {
+    display: flex;
+    align-items: center;
+    margin-right: var(--spacing-md);
+}
+
+.exam-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-custom {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background-color: var(--white);
+}
+
+.exam-input:checked + .checkbox-custom {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.exam-input:checked + .checkbox-custom::after {
+    content: '';
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+}
+
+.exam-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+.exam-name {
+    font-size: 0.95rem;
+    color: var(--gray-700);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.exam-price {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.exam-status {
+    margin-left: var(--spacing-sm);
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+}
+
+.exam-item:hover .exam-status {
+    opacity: 1;
+}
+
+.icon-info {
+    width: 20px;
+    height: 20px;
+    color: var(--gray-400);
+}
+
+/* ========================================
+   Shopping Cart Styles
+   ======================================== */
+
+.shopping-cart {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: var(--shadow-xl);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: right var(--transition-normal);
+}
+
+.shopping-cart.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.cart-header h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.close-cart:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.close-cart svg {
+    width: 24px;
+    height: 24px;
+    color: var(--white);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+}
+
+.cart-empty {
+    text-align: center;
+    color: var(--gray-500);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    font-style: italic;
+}
+
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-100);
+    gap: var(--spacing-md);
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.cart-item-code {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.cart-item-price {
+    font-weight: 600;
+    color: var(--primary-blue);
+    white-space: nowrap;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    color: var(--error-red);
+    transition: opacity var(--transition-fast);
+}
+
+.remove-item:hover {
+    opacity: 0.7;
+}
+
+.remove-item svg {
+    width: 18px;
+    height: 18px;
+}
+
+.cart-footer {
+    border-top: 1px solid var(--gray-200);
+    padding: var(--spacing-lg);
+    background-color: var(--gray-50);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--success-green);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.checkout-btn:hover:not(:disabled) {
+    background-color: var(--success-green-dark);
+}
+
+.checkout-btn:disabled {
+    background-color: var(--gray-300);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Cart Toggle Button */
+.cart-toggle {
+    position: fixed;
+    right: var(--spacing-xl);
+    bottom: var(--spacing-xl);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all var(--transition-fast);
+}
+
+.cart-toggle:hover {
+    background-color: var(--primary-blue-dark);
+    transform: scale(1.1);
+}
+
+.cart-toggle svg {
+    width: 28px;
+    height: 28px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--error-red);
+    color: var(--white);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 2px solid var(--white);
+}
+
+.cart-badge.hidden {
+    display: none;
+}
+
+/* ========================================
+   Responsive - Shopping Cart & Exams
+   ======================================== */
+
+@media (max-width: 768px) {
+    .shopping-cart {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .exam-item {
+        padding: var(--spacing-md);
+    }
+    
+    .exam-name {
+        font-size: 0.875rem;
+    }
+    
+    .exam-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .exam-price {
+        font-size: 0.875rem;
+    }
+    
+    .cart-toggle {
+        width: 56px;
+        height: 56px;
+        right: var(--spacing-md);
+        bottom: var(--spacing-md);
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+

@@ -435,11 +435,225 @@ function resetForm() {
 }
 
 // ========================================
+// Shopping Cart Functionality
+// ========================================
+
+const cart = {
+    items: [],
+    
+    addItem(exam) {
+        const existingItem = this.items.find(item => item.id === exam.id);
+        if (!existingItem) {
+            this.items.push(exam);
+            this.updateCart();
+        }
+    },
+    
+    removeItem(examId) {
+        this.items = this.items.filter(item => item.id !== examId);
+        this.updateCart();
+    },
+    
+    getTotal() {
+        return this.items.reduce((total, item) => total + item.price, 0);
+    },
+    
+    getCount() {
+        return this.items.length;
+    },
+    
+    clear() {
+        this.items = [];
+        this.updateCart();
+    },
+    
+    updateCart() {
+        updateCartUI();
+        updateCartBadge();
+    }
+};
+
+function updateCartUI() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalAmount = document.getElementById('cart-total-amount');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    
+    // Update cart items
+    if (cart.items.length === 0) {
+        cartItemsContainer.innerHTML = '<p class="cart-empty">No hay exámenes seleccionados</p>';
+        checkoutBtn.disabled = true;
+    } else {
+        cartItemsContainer.innerHTML = cart.items.map(item => `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-code">${item.code}</div>
+                </div>
+                <div class="cart-item-price">${item.price > 0 ? '$' + item.price.toLocaleString('es-CL') : 'Gratis'}</div>
+                <button class="remove-item" onclick="removeFromCart('${item.id}')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        `).join('');
+        checkoutBtn.disabled = false;
+    }
+    
+    // Update total
+    const total = cart.getTotal();
+    cartTotalAmount.textContent = total > 0 ? '$' + total.toLocaleString('es-CL') : 'Gratis';
+}
+
+function updateCartBadge() {
+    const cartBadge = document.getElementById('cart-badge');
+    const count = cart.getCount();
+    
+    if (count > 0) {
+        cartBadge.textContent = count;
+        cartBadge.classList.remove('hidden');
+    } else {
+        cartBadge.classList.add('hidden');
+    }
+}
+
+function removeFromCart(examId) {
+    // Uncheck the checkbox
+    const checkbox = document.getElementById(`exam-${examId}`);
+    if (checkbox) {
+        checkbox.checked = false;
+    }
+    
+    // Remove from cart
+    cart.removeItem(examId);
+}
+
+// ========================================
+// Exam Selection Handlers
+// ========================================
+
+function initializeExamCheckboxes() {
+    const examItems = document.querySelectorAll('.exam-item');
+    
+    examItems.forEach(item => {
+        const checkbox = item.querySelector('.exam-input');
+        const examId = item.getAttribute('data-exam-id');
+        const examPrice = parseInt(item.getAttribute('data-price'));
+        const examCode = item.getAttribute('data-code');
+        const examNameElement = item.querySelector('.exam-name');
+        const examName = examNameElement.textContent.trim();
+        
+        // Add click handler to the entire item
+        item.addEventListener('click', (e) => {
+            // Don't toggle if clicking on the checkbox itself or info icon
+            if (e.target.classList.contains('exam-input') || 
+                e.target.closest('.exam-status') ||
+                e.target.classList.contains('checkbox-custom')) {
+                return;
+            }
+            checkbox.checked = !checkbox.checked;
+            checkbox.dispatchEvent(new Event('change'));
+        });
+        
+        // Add change handler to checkbox
+        checkbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                cart.addItem({
+                    id: examId,
+                    name: examName,
+                    price: examPrice,
+                    code: examCode
+                });
+            } else {
+                cart.removeItem(examId);
+            }
+        });
+    });
+}
+
+// ========================================
+// Cart Toggle Functionality
+// ========================================
+
+function initializeCartToggle() {
+    const cartToggle = document.getElementById('cart-toggle');
+    const shoppingCart = document.getElementById('shopping-cart');
+    const closeCart = document.getElementById('close-cart');
+    
+    cartToggle.addEventListener('click', () => {
+        shoppingCart.classList.add('active');
+    });
+    
+    closeCart.addEventListener('click', () => {
+        shoppingCart.classList.remove('active');
+    });
+    
+    // Close cart when clicking outside
+    document.addEventListener('click', (e) => {
+        if (shoppingCart.classList.contains('active') &&
+            !shoppingCart.contains(e.target) &&
+            !cartToggle.contains(e.target)) {
+            shoppingCart.classList.remove('active');
+        }
+    });
+}
+
+// ========================================
+// Checkout Functionality
+// ========================================
+
+function initializeCheckout() {
+    const checkoutBtn = document.getElementById('checkout-btn');
+    
+    checkoutBtn.addEventListener('click', () => {
+        if (cart.items.length === 0) return;
+        
+        // Create order summary
+        const orderSummary = {
+            exams: cart.items,
+            total: cart.getTotal(),
+            timestamp: new Date().toISOString(),
+            status: 'pending'
+        };
+        
+        console.log('='.repeat(50));
+        console.log('SOLICITUD DE EXÁMENES');
+        console.log('='.repeat(50));
+        console.log('Exámenes solicitados:');
+        orderSummary.exams.forEach(exam => {
+            console.log(`- ${exam.name} (${exam.code}) - ${exam.price > 0 ? '$' + exam.price : 'Gratis'}`);
+        });
+        console.log('');
+        console.log(`Total: $${orderSummary.total.toLocaleString('es-CL')}`);
+        console.log(`Fecha: ${new Date(orderSummary.timestamp).toLocaleString('es-CL')}`);
+        console.log('='.repeat(50));
+        
+        // Show success message
+        alert(`¡Solicitud enviada!\n\nHas solicitado ${cart.items.length} examen(es).\nTotal: ${orderSummary.total > 0 ? '$' + orderSummary.total.toLocaleString('es-CL') : 'Gratis'}\n\nRecibirás tu orden médica por correo electrónico.`);
+        
+        // Clear cart
+        cart.clear();
+        
+        // Clear all checkboxes
+        document.querySelectorAll('.exam-input').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+        
+        // Close cart
+        document.getElementById('shopping-cart').classList.remove('active');
+    });
+}
+
+// ========================================
 // Initialize Application
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeMapMarkers();
+    initializeExamCheckboxes();
+    initializeCartToggle();
+    initializeCheckout();
 
     console.log('CxTrauma - Plataforma Médica de Órdenes de Resonancia Magnética');
     console.log('Sistema inicializado correctamente');
@@ -449,3 +663,4 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`- ${center.name} (${center.location})`);
     });
 });
+

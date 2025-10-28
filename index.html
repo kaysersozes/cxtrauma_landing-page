@@ -60,7 +60,7 @@
 
                         <!-- Marcador Viña del Mar -->
                         <div class="map-marker" data-center="clinica-vina" style="left: 35%; top: 65%;" title="Clínica Viña del Mar">
-                            <svg width="48" height="60" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="32" height="40" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 24 60 24 60C24 60 48 37.2548 48 24C48 10.7452 37.2548 0 24 0Z" fill="#E63946"/>
                                 <circle cx="24" cy="24" r="12" fill="white"/>
                                 <path d="M24 15V33M15 24H33" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
@@ -70,7 +70,7 @@
 
                         <!-- Marcador Quillota -->
                         <div class="map-marker" data-center="hospital-quillota" style="left: 45%; top: 25%;" title="Hospital Quillota">
-                            <svg width="48" height="60" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="32" height="40" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 24 60 24 60C24 60 48 37.2548 48 24C48 10.7452 37.2548 0 24 0Z" fill="#E63946"/>
                                 <circle cx="24" cy="24" r="12" fill="white"/>
                                 <path d="M24 15V33M15 24H33" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
@@ -249,6 +249,369 @@
             </div>
         </div>
     </main>
+
+    <!-- Medical Exams Section -->
+    <section class="exams-section">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">Otras Órdenes de Exámenes Disponibles</h3>
+                <p class="section-subtitle">Selecciona los exámenes que necesitas y agrégalos a tu solicitud</p>
+            </div>
+
+            <div class="exams-grid">
+                <div class="exams-list">
+                    <div class="exam-item" data-exam-id="hemograma" data-price="0" data-code="0301045">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-hemograma" class="exam-input">
+                            <label for="exam-hemograma" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-hemograma" class="exam-name">Hemograma + VHS (0301045)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="perfil-hepatico" data-price="0" data-code="0302076">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-perfil-hepatico" class="exam-input">
+                            <label for="exam-perfil-hepatico" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-perfil-hepatico" class="exam-name">Perfil Hepático (0302076)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="perfil-lipidico" data-price="0" data-code="0302034">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-perfil-lipidico" class="exam-input">
+                            <label for="exam-perfil-lipidico" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-perfil-lipidico" class="exam-name">Perfil Lipídico (0302034)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="perfil-bioquimico" data-price="0" data-code="0302075">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-perfil-bioquimico" class="exam-input">
+                            <label for="exam-perfil-bioquimico" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-perfil-bioquimico" class="exam-name">Perfil Bioquímico (0302075)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="electrolitos" data-price="0" data-code="0302032x3">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-electrolitos" class="exam-input">
+                            <label for="exam-electrolitos" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-electrolitos" class="exam-name">Na, K, Cl (Electrolitos)(0302032x3)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="hemoglobina" data-price="0" data-code="0301041">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-hemoglobina" class="exam-input">
+                            <label for="exam-hemoglobina" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-hemoglobina" class="exam-name">Hemoglobina glicosilada (0301041)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="tsh-t4l" data-price="0" data-code="0303024-0303026">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-tsh-t4l" class="exam-input">
+                            <label for="exam-tsh-t4l" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-tsh-t4l" class="exam-name">TSH y T4L (0303024-0303026)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="ecg" data-price="490" data-code="1701001">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-ecg" class="exam-input">
+                            <label for="exam-ecg" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-ecg" class="exam-name">Electrocardiograma de 12 derivaciones en reposo (1701001)</label>
+                            <span class="exam-price">$490</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="orina-urocultivo" data-price="490" data-code="0309022-0306011">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-orina-urocultivo" class="exam-input">
+                            <label for="exam-orina-urocultivo" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-orina-urocultivo" class="exam-name">Orina completa + Urocultivo (0309022-0306011)</label>
+                            <span class="exam-price">$490</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="creatinina" data-price="490" data-code="0302023">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-creatinina" class="exam-input">
+                            <label for="exam-creatinina" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-creatinina" class="exam-name">Creatinina en sangre (0302023)</label>
+                            <span class="exam-price">$490</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="nitrogeno" data-price="0" data-code="0302057">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-nitrogeno" class="exam-input">
+                            <label for="exam-nitrogeno" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-nitrogeno" class="exam-name">Nitrógeno Ureico (BUN)(0302057)</label>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="cinetica-fierro" data-price="990" data-code="0301029">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-cinetica-fierro" class="exam-input">
+                            <label for="exam-cinetica-fierro" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-cinetica-fierro" class="exam-name">Cinética de Fierro: Ferremia + TIBC (0301029), Ferritina (0301026), Transferrina (0301082)</label>
+                            <span class="exam-price">$990</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="proteina-c" data-price="990" data-code="0305031">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-proteina-c" class="exam-input">
+                            <label for="exam-proteina-c" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-proteina-c" class="exam-name">Proteína C Reactiva cuantitativa (0305031)</label>
+                            <span class="exam-price">$990</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="vitamina-d" data-price="990" data-code="0302078">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-vitamina-d" class="exam-input">
+                            <label for="exam-vitamina-d" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-vitamina-d" class="exam-name">Vitamina D en sangre (25-OH-VitD)(0302078)</label>
+                            <span class="exam-price">$990</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="ecografia" data-price="1990" data-code="0404003">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-ecografia" class="exam-input">
+                            <label for="exam-ecografia" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-ecografia" class="exam-name">Ecografía abdominal (incluye hígado, vía biliar, vesícula, páncreas, riñones, bazo, retroperitoneo y grandes vasos)(0404003)</label>
+                            <span class="exam-price">$1,990</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="holter-presion" data-price="990" data-code="1701009">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-holter-presion" class="exam-input">
+                            <label for="exam-holter-presion" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-holter-presion" class="exam-name">Holter de presión arterial (1701009)</label>
+                            <span class="exam-price">$990</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="holter-arritmias" data-price="990" data-code="1701006">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-holter-arritmias" class="exam-input">
+                            <label for="exam-holter-arritmias" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-holter-arritmias" class="exam-name">Holter de arritmias (1701006)</label>
+                            <span class="exam-price">$990</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="exam-item" data-exam-id="test-esfuerzo" data-price="990" data-code="1701003">
+                        <div class="exam-checkbox">
+                            <input type="checkbox" id="exam-test-esfuerzo" class="exam-input">
+                            <label for="exam-test-esfuerzo" class="checkbox-custom"></label>
+                        </div>
+                        <div class="exam-info">
+                            <label for="exam-test-esfuerzo" class="exam-name">Test de esfuerzo (1701003)</label>
+                            <span class="exam-price">$990</span>
+                        </div>
+                        <div class="exam-status">
+                            <svg class="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div id="shopping-cart" class="shopping-cart">
+        <div class="cart-header">
+            <h4>Carrito de Exámenes</h4>
+            <button id="close-cart" class="close-cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="cart-empty">No hay exámenes seleccionados</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn" disabled>Solicitar Exámenes</button>
+        </div>
+    </div>
+
+    <!-- Cart Toggle Button -->
+    <button id="cart-toggle" class="cart-toggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span id="cart-badge" class="cart-badge">0</span>
+    </button>
 
     <!-- Testimonials Section -->
     <section class="testimonials-section">

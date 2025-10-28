@@ -1671,3 +1671,143 @@ body {
     }
 }
 
+/* ========================================
+   Scroll Animations
+   ======================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ========================================
+   Enhanced Hover Effects
+   ======================================== */
+
+.center-card {
+    transition: all var(--transition-normal);
+}
+
+.center-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card {
+    transition: all var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   Pulse Animation for CTA Button
+   ======================================== */
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+    }
+}
+
+.btn-solicitar {
+    animation: pulse 2s infinite;
+}
+
+.btn-solicitar:hover {
+    animation: none;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   Stagger Animation Delays
+   ======================================== */
+
+.step:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.step:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.step:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.center-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.center-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.center-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.testimonial-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.testimonial-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.testimonial-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.exam-item:nth-child(odd) {
+    transition-delay: 0.05s;
+}
+
+.exam-item:nth-child(even) {
+    transition-delay: 0.1s;
+}
+

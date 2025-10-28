@@ -16,6 +16,13 @@ const MEDICAL_CENTERS = [
         location: 'Quillota',
         doctor: 'Dr. Morales Castro',
         specialty: 'Traumatología'
+    },
+    {
+        id: 'hospital-osorno',
+        name: 'Hospital Osorno',
+        location: 'Osorno',
+        doctor: 'Dr. Ramírez Soto',
+        specialty: 'Traumatología'
     }
 ];
 
@@ -646,6 +653,29 @@ function initializeCheckout() {
 }
 
 // ========================================
+// Scroll Animation Observer
+// ========================================
+
+function initializeScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+}
+
+// ========================================
 // Initialize Application
 // ========================================
 
@@ -654,6 +684,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeExamCheckboxes();
     initializeCartToggle();
     initializeCheckout();
+    initializeScrollAnimations();
 
     console.log('CxTrauma - Plataforma Médica de Órdenes de Resonancia Magnética');
     console.log('Sistema inicializado correctamente');

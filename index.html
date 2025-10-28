@@ -77,6 +77,16 @@
                             </svg>
                             <span class="marker-label">Quillota</span>
                         </div>
+
+                        <!-- Marcador Osorno -->
+                        <div class="map-marker" data-center="hospital-osorno" style="left: 50%; top: 10%;" title="Hospital Osorno">
+                            <svg width="32" height="40" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 24 60 24 60C24 60 48 37.2548 48 24C48 10.7452 37.2548 0 24 0Z" fill="#E63946"/>
+                                <circle cx="24" cy="24" r="12" fill="white"/>
+                                <path d="M24 15V33M15 24H33" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                            <span class="marker-label">Osorno</span>
+                        </div>
                     </div>
                     <button id="open-form-btn" class="btn-solicitar">Solicitar Orden Gratuita</button>
                 </div>
@@ -87,7 +97,7 @@
                         <div class="info-section">
                             <h3 class="info-title">Centros Médicos Disponibles</h3>
                             <div class="centers-list">
-                                <div class="center-card" data-center="clinica-vina">
+                                <div class="center-card fade-in" data-center="clinica-vina">
                                     <div class="center-header">
                                         <h4>Clínica Viña del Mar</h4>
                                         <span class="center-status">Disponible</span>
@@ -98,7 +108,7 @@
                                         <span class="feature-tag">Sedación disponible</span>
                                     </div>
                                 </div>
-                                <div class="center-card" data-center="hospital-quillota">
+                                <div class="center-card fade-in" data-center="hospital-quillota">
                                     <div class="center-header">
                                         <h4>Hospital Quillota</h4>
                                         <span class="center-status">Disponible</span>
@@ -109,38 +119,42 @@
                                         <span class="feature-tag">Horario extendido</span>
                                     </div>
                                 </div>
+                                <div class="center-card fade-in" data-center="hospital-osorno">
+                                    <div class="center-header">
+                                        <h4>Hospital Osorno</h4>
+                                        <span class="center-status">Disponible</span>
+                                    </div>
+                                    <p class="center-address">Guillermo Bühler 1615, Osorno</p>
+                                    <div class="center-features">
+                                        <span class="feature-tag">Resonancia 1.5T</span>
+                                        <span class="feature-tag">Atención 24/7</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="info-section">
                             <h3 class="info-title">¿Cómo funciona?</h3>
                             <div class="steps-list">
-                                <div class="step">
+                                <div class="step fade-in-left">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
                                         <h4>Completa el formulario</h4>
-                                        <p>Proporciona tus datos y selecciona el centro médico de tu preferencia</p>
+                                        <p>Ingresa tus datos personales, elige la especialidad Traumatología y selecciona el centro médico de tu preferencia.</p>
                                     </div>
                                 </div>
-                                <div class="step">
+                                <div class="step fade-in-left">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
-                                        <h4>Revisión médica</h4>
-                                        <p>Un especialista revisa tu solicitud y genera la orden médica</p>
+                                        <h4>Agenda tu hora</h4>
+                                        <p>Recibirás un correo electrónico con el enlace para agendar tu cita en el centro médico que elegiste.</p>
                                     </div>
                                 </div>
-                                <div class="step">
+                                <div class="step fade-in-left">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
-                                        <h4>Recibe tu orden</h4>
-                                        <p>La orden firmada llega a tu correo en formato digital</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <div class="step-number">4</div>
-                                    <div class="step-content">
-                                        <h4>Agenda tu cita</h4>
-                                        <p>Contacta directamente al centro para agendar tu resonancia</p>
+                                        <h4>Retira tus resultados</h4>
+                                        <p>Tus resultados estarán disponibles para retiro y también serán enviados al traumatólogo, quien continuará con tu tratamiento.</p>
                                     </div>
                                 </div>
                             </div>
@@ -253,13 +267,13 @@
     <!-- Medical Exams Section -->
     <section class="exams-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h3 class="section-title">Otras Órdenes de Exámenes Disponibles</h3>
                 <p class="section-subtitle">Selecciona los exámenes que necesitas y agrégalos a tu solicitud</p>
             </div>
 
             <div class="exams-grid">
-                <div class="exams-list">
+                <div class="exams-list scale-in">
                     <div class="exam-item" data-exam-id="hemograma" data-price="0" data-code="0301045">
                         <div class="exam-checkbox">
                             <input type="checkbox" id="exam-hemograma" class="exam-input">
@@ -616,12 +630,12 @@
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
-            <div class="testimonials-header">
+            <div class="testimonials-header fade-in">
                 <h2 class="testimonials-title">Lo que dicen nuestros pacientes</h2>
                 <p class="testimonials-subtitle">Miles de personas han confiado en nuestro servicio gratuito</p>
             </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-content">
                         <div class="stars">
                             <svg class="star" viewBox="0 0 20 20" fill="currentColor">
@@ -652,7 +666,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-content">
                         <div class="stars">
                             <svg class="star" viewBox="0 0 20 20" fill="currentColor">
@@ -683,7 +697,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-content">
                         <div class="stars">
                             <svg class="star" viewBox="0 0 20 20" fill="currentColor">
